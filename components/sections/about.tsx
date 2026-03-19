@@ -19,20 +19,22 @@ export function AboutSection() {
       }}
     >
       <SectionHeading
-        eyebrow="Về mình"
-        title="Tập trung vào sản phẩm, hiệu năng và khả năng mở rộng"
-        description="Mình thích xây các trải nghiệm UI sạch, nhanh, và có cấu trúc code dễ bảo trì. Mục tiêu là giúp team ship nhanh hơn mà vẫn giữ chất lượng."
+        eyebrow="About"
+        title="Fullstack developer who cares about product and performance"
+        description="I have almost 1 year of experience working on real-world systems for retail, finance and task management. I enjoy designing clear user flows and maintainable codebases that help teams ship faster with confidence."
       />
 
       <div className="grid gap-8 lg:grid-cols-2">
         <div className="rounded-[var(--radius)] border border-[var(--border)] bg-[var(--card)] p-6">
-          <h3 className="text-base font-semibold tracking-tight">
-            Những gì mình làm tốt
-          </h3>
+          <h3 className="text-base font-semibold tracking-tight">Who am I?</h3>
           <p className="mt-3 text-sm leading-7 text-[var(--muted-foreground)]">
-            Next.js App Router, TypeScript, thiết kế component tái sử dụng, tối ưu
-            SEO & Core Web Vitals. Mình ưu tiên chuẩn hoá naming, tách module rõ
-            ràng, và DX (developer experience).
+            I&apos;m {site.personalInfo.fullName}, a {site.personalInfo.role}{" "}
+            based in {site.location}. I&apos;ve worked on projects in retail, finance
+            and task management, from designing APIs to building usable interfaces.
+          </p>
+          <p className="mt-3 text-sm leading-7 text-[var(--muted-foreground)]">
+            My strengths are understanding business requirements, breaking them into
+            concrete features, and keeping the codebase clean so teammates can onboard quickly.
           </p>
 
           <div className="mt-5 flex flex-wrap gap-2">
@@ -52,7 +54,7 @@ export function AboutSection() {
         </div>
 
         <div className="rounded-[var(--radius)] border border-[var(--border)] bg-[var(--card)] p-6">
-          <h3 className="text-base font-semibold tracking-tight">Kỹ năng</h3>
+          <h3 className="text-base font-semibold tracking-tight">Skills</h3>
           <div className="mt-5 space-y-4">
             {site.skills.map((s) => (
               <MotionDiv
@@ -62,11 +64,8 @@ export function AboutSection() {
                 viewport={{ once: true }}
                 transition={{ duration: 0.35 }}
               >
-                <div className="flex items-center justify-between gap-3">
+                <div className="flex items-center gap-3">
                   <span className="text-sm font-medium">{s.name}</span>
-                  <span className="text-xs text-[var(--muted-foreground)]">
-                    {s.level}%
-                  </span>
                 </div>
                 <div className="mt-2 h-2 w-full rounded-full bg-[var(--muted)]">
                   <div

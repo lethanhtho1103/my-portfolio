@@ -30,9 +30,9 @@ export function ProjectsSection() {
       }}
     >
       <SectionHeading
-        eyebrow="Dự án"
-        title="Một vài dự án tiêu biểu"
-        description="Dữ liệu đang là mock để chạy out-of-the-box. Bạn chỉ cần thay link + nội dung trong `data/site.ts`."
+        eyebrow="Projects"
+        title="Selected work"
+        description="A few real-world projects that highlight how I solve problems end-to-end."
       />
 
       <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">

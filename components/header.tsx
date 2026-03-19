@@ -4,19 +4,20 @@ import * as React from "react";
 import Link from "next/link";
 import { Menu, X } from "lucide-react";
 import { cn } from "@/lib/utils";
-import { ModeToggle } from "@/components/mode-toggle";
 import { Button } from "@/components/ui/button";
 import { site } from "@/data/site";
 
 const nav = [
-  { label: "Giới thiệu", href: "#about" },
-  { label: "Dự án", href: "#projects" },
-  { label: "Kinh nghiệm", href: "#experience" },
-  { label: "Liên hệ", href: "#contact" },
+  { label: "About", href: "#about" },
+  { label: "Skills", href: "#skills" },
+  { label: "Projects", href: "#projects" },
+  { label: "Experience", href: "#experience" },
+  { label: "Contact", href: "#contact" },
 ] as const;
 
 export function Header() {
   const [open, setOpen] = React.useState(false);
+  const [scrolled, setScrolled] = React.useState(false);
 
   React.useEffect(() => {
     if (!open) return;
@@ -27,8 +28,24 @@ export function Header() {
     return () => window.removeEventListener("keydown", onKeyDown);
   }, [open]);
 
+  React.useEffect(() => {
+    const handleScroll = () => {
+      const isScrolled = window.scrollY > 8;
+      setScrolled(isScrolled);
+    };
+
+    handleScroll();
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
+
   return (
-    <header className="sticky top-0 z-50 border-b border-[var(--border)] bg-[color-mix(in_oklab,var(--background)_88%,transparent)] backdrop-blur">
+    <header
+      className={cn(
+        "sticky top-0 z-50 border-b border-[var(--border)] bg-[color-mix(in_oklab,var(--background)_88%,transparent)] backdrop-blur transition-all",
+        scrolled ? "shadow-sm backdrop-blur-lg" : "",
+      )}
+    >
       <div className="container flex h-16 items-center justify-between">
         <div className="flex items-center gap-3">
           <Link
@@ -52,17 +69,13 @@ export function Header() {
               {item.label}
             </Link>
           ))}
-          <div className="ml-2">
-            <ModeToggle />
-          </div>
         </nav>
 
         <div className="flex items-center gap-2 md:hidden">
-          <ModeToggle />
           <Button
             variant="ghost"
             size="sm"
-            aria-label={open ? "Đóng menu" : "Mở menu"}
+            aria-label={open ? "Close menu" : "Open menu"}
             className="w-10 px-0"
             onClick={() => setOpen((v) => !v)}
           >

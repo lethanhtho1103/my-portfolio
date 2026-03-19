@@ -18,9 +18,9 @@ export function TimelineSection() {
       }}
     >
       <SectionHeading
-        eyebrow="Kinh nghiệm"
-        title="Timeline học & làm"
-        description="Tóm tắt theo mốc thời gian — tối ưu để recruiter scan nhanh."
+        eyebrow="Experience"
+        title="Timeline of work and education"
+        description="Condensed into key milestones so recruiters can understand my journey quickly."
       />
 
       <div className="grid gap-4">
@@ -49,6 +49,13 @@ export function TimelineSection() {
             <p className="mt-3 text-sm leading-7 text-[var(--muted-foreground)]">
               {item.description}
             </p>
+            {item.bullets && item.bullets.length > 0 && (
+              <ul className="mt-3 list-disc space-y-1 pl-5 text-sm text-[var(--muted-foreground)]">
+                {item.bullets.map((bullet) => (
+                  <li key={bullet}>{bullet}</li>
+                ))}
+              </ul>
+            )}
           </MotionDiv>
         ))}
       </div>

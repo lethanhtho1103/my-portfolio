@@ -65,16 +65,16 @@ export function ContactSection() {
       transition={{ duration: 0.5 }}
     >
       <SectionHeading
-        eyebrow="Liên hệ"
-        title="Cùng xây sản phẩm tiếp theo"
-        description="Gửi nhanh một tin nhắn. Mình sẽ phản hồi sớm."
+        eyebrow="Contact"
+        title="Let&apos;s work on your next project"
+        description="Send me a quick message and I&apos;ll get back to you as soon as I can."
       />
 
       <div className="grid gap-8 lg:grid-cols-5">
         <div className="lg:col-span-2">
           <div className="rounded-[var(--radius)] border border-[var(--border)] bg-[var(--card)] p-6">
             <p className="text-sm text-[var(--muted-foreground)]">
-              Hoặc liên hệ qua:
+              Or reach out via:
             </p>
             <div className="mt-4 grid gap-2">
               <Link
@@ -117,13 +117,13 @@ export function ContactSection() {
           >
             <div className="grid gap-4 sm:grid-cols-2">
               <div className="grid gap-2">
-                <label className="text-sm font-medium">Tên</label>
+                <label className="text-sm font-medium">Name</label>
                 <Input
                   value={form.name}
                   onChange={(e) =>
                     setForm((v) => ({ ...v, name: e.target.value }))
                   }
-                  placeholder="Tên của bạn"
+                  placeholder="Your name"
                   required
                 />
               </div>
@@ -142,13 +142,13 @@ export function ContactSection() {
             </div>
 
             <div className="mt-4 grid gap-2">
-              <label className="text-sm font-medium">Tin nhắn</label>
+              <label className="text-sm font-medium">Message</label>
               <Textarea
                 value={form.message}
                 onChange={(e) =>
                   setForm((v) => ({ ...v, message: e.target.value }))
                 }
-                placeholder="Bạn muốn trao đổi về dự án gì?"
+                placeholder="What would you like to discuss?"
                 required
               />
             </div>
@@ -158,12 +158,12 @@ export function ContactSection() {
                 {status.type === "loading" ? (
                   <>
                     <Loader2 className="h-4 w-4 animate-spin" />
-                    Đang gửi...
+                    Sending...
                   </>
                 ) : (
                   <>
                     <Send className="h-4 w-4" />
-                    Gửi
+                    Send message
                   </>
                 )}
               </Button>
@@ -178,7 +178,7 @@ export function ContactSection() {
                 </p>
               ) : (
                 <p className="text-sm text-[var(--muted-foreground)]">
-                  Hoặc bấm{" "}
+                  Or just click{" "}
                   <Link
                     className="inline-flex items-center gap-1 font-medium text-[var(--foreground)] hover:underline"
                     href={`mailto:${site.email}`}
