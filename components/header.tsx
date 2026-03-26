@@ -5,11 +5,11 @@ import Link from "next/link";
 import { Menu, X } from "lucide-react";
 import { cn } from "@/lib/utils";
 import { Button } from "@/components/ui/button";
+import { ModeToggle } from "@/components/mode-toggle";
 import { site } from "@/data/site";
 
 const nav = [
   { label: "About", href: "#about" },
-  { label: "Skills", href: "#skills" },
   { label: "Projects", href: "#projects" },
   { label: "Experience", href: "#experience" },
   { label: "Contact", href: "#contact" },
@@ -69,13 +69,19 @@ export function Header() {
               {item.label}
             </Link>
           ))}
+
+          <div className="ml-1">
+            <ModeToggle />
+          </div>
         </nav>
 
+        {/* Mobile actions */}
         <div className="flex items-center gap-2 md:hidden">
+          <ModeToggle />
           <Button
             variant="ghost"
             size="sm"
-            aria-label={open ? "Close menu" : "Open menu"}
+            aria-label={open ? "Đóng menu" : "Mở menu"}
             className="w-10 px-0"
             onClick={() => setOpen((v) => !v)}
           >
@@ -106,4 +112,3 @@ export function Header() {
     </header>
   );
 }
-

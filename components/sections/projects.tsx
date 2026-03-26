@@ -1,7 +1,7 @@
 "use client";
 
 import Link from "next/link";
-import { ExternalLink, Github } from "lucide-react";
+import { Github, Users } from "lucide-react";
 import { MotionSection, MotionDiv } from "@/components/motion";
 import { SectionHeading } from "@/components/section-heading";
 import {
@@ -13,7 +13,6 @@ import {
   CardTitle,
 } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
-import { Button } from "@/components/ui/button";
 import { site } from "@/data/site";
 
 export function ProjectsSection() {
@@ -31,11 +30,12 @@ export function ProjectsSection() {
     >
       <SectionHeading
         eyebrow="Projects"
-        title="Selected work"
-        description="A few real-world projects that highlight how I solve problems end-to-end."
+        title="Projects"
+        description="Some of the projects I've worked on"
+        className="max-w-5xl"
       />
 
-      <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
+      <div className="mx-auto flex max-w-5xl flex-col gap-6">
         {site.projects.map((p, idx) => (
           <MotionDiv
             key={p.title}
@@ -44,34 +44,65 @@ export function ProjectsSection() {
             viewport={{ once: true }}
             transition={{ duration: 0.35, delay: idx * 0.05 }}
           >
-            <Card className="h-full transition-transform hover:-translate-y-0.5">
-              <CardHeader>
-                <CardTitle>{p.title}</CardTitle>
-                <CardDescription>{p.description}</CardDescription>
+            <Card className="transition-shadow hover:shadow-md">
+              <CardHeader className="pb-3">
+                <div className="flex items-start justify-between gap-4">
+                  <div className="min-w-0">
+                    <CardTitle
+                      className={
+                        p.featured
+                          ? "text-lg font-bold text-blue-600"
+                          : "text-lg font-bold"
+                      }
+                    >
+                      {p.title}
+                    </CardTitle>
+                    <CardDescription className="mt-1">
+                      {p.subtitle}
+                    </CardDescription>
+                  </div>
+
+                  <div className="flex shrink-0 items-center gap-3">
+                    <div className="flex items-center gap-2 text-xs text-[var(--muted-foreground)]">
+                      <Users className="h-4 w-4" />
+                      <span>{p.members} members</span>
+                    </div>
+
+                    {p.githubUrl ? (
+                      <Link
+                        href={p.githubUrl}
+                        target="_blank"
+                        rel="noreferrer"
+                        aria-label="GitHub"
+                        className="inline-flex h-9 w-9 items-center justify-center rounded-full border border-[var(--border)] text-[var(--muted-foreground)] hover:bg-[var(--muted)] hover:text-[var(--foreground)]"
+                      >
+                        <Github className="h-4 w-4" />
+                      </Link>
+                    ) : null}
+                  </div>
+                </div>
               </CardHeader>
 
-              <CardContent>
+              <CardContent className="pt-0">
                 <div className="flex flex-wrap gap-2">
                   {p.tech.map((t) => (
-                    <Badge key={t}>{t}</Badge>
+                    <Badge key={t} variant="outline">
+                      {t}
+                    </Badge>
                   ))}
                 </div>
+
+                <ul className="mt-5 space-y-2 text-sm text-[var(--muted-foreground)]">
+                  {p.bullets.map((b) => (
+                    <li key={b} className="flex gap-3">
+                      <span className="mt-2 h-1.5 w-1.5 shrink-0 rounded-full bg-blue-600" />
+                      <span className="leading-6">{b}</span>
+                    </li>
+                  ))}
+                </ul>
               </CardContent>
 
-              <CardFooter className="mt-auto flex items-center gap-2">
-                <Link href={p.demoUrl} target="_blank" rel="noreferrer">
-                  <Button variant="secondary" size="sm">
-                    <ExternalLink className="h-4 w-4" />
-                    Demo
-                  </Button>
-                </Link>
-                <Link href={p.githubUrl} target="_blank" rel="noreferrer">
-                  <Button variant="ghost" size="sm">
-                    <Github className="h-4 w-4" />
-                    GitHub
-                  </Button>
-                </Link>
-              </CardFooter>
+              <CardFooter className="pt-0" />
             </Card>
           </MotionDiv>
         ))}
@@ -79,4 +110,3 @@ export function ProjectsSection() {
     </MotionSection>
   );
 }
-

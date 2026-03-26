@@ -5,10 +5,12 @@ export type SocialLink = {
 
 export type Project = {
   title: string;
-  description: string;
+  subtitle: string;
   tech: string[];
-  demoUrl: string;
-  githubUrl: string;
+  members: number;
+  bullets: string[];
+  githubUrl?: string;
+  featured?: boolean;
 };
 
 export type TimelineItem = {
@@ -17,6 +19,7 @@ export type TimelineItem = {
   org: string;
   description: string;
   bullets?: string[];
+  type?: "work" | "education";
 };
 
 export type Skill = {
@@ -51,9 +54,9 @@ export type Experience = {
 
 export const site = {
   name: "Le Thanh Tho",
-  title: "Fullstack Developer",
+  title: "Software Developer",
   tagline:
-    "Fullstack developer with almost 1 year of experience building web applications for commerce, finance and workforce management.",
+    "Software developer with almost 1 year of experience building web applications for commerce, finance and workforce management.",
   location: "Tan Chau District, An Giang Province, Viet Nam",
   email: "lethanhtho1953@gmail.com",
   cvUrl: "https://github.com/lethanhtho1103",
@@ -63,7 +66,7 @@ export const site = {
   ] satisfies SocialLink[],
   personalInfo: {
     fullName: "Le Thanh Tho",
-    role: "Fullstack Developer",
+    role: "Software Developer",
     location: "Tan Chau District, An Giang Province, Viet Nam",
     email: "lethanhtho1953@gmail.com",
     phone: "097-222-1953",
@@ -112,35 +115,46 @@ export const site = {
   ] satisfies SkillCategory[],
   projects: [
     {
-      title: "SOFIPOS — Sales & Cashflow Management System",
-      description:
-        "Problem: retail household stores struggle to track inventory, cashflow and debts in a transparent way. Solution: SOFIPOS provides real-time tracking for stock in/out, income/expense, receivables/payables and financial reporting.",
+      title: "SOFIPOS",
+      subtitle:
+        "Sales, Inventory, Cashflow & Debt Management and Reporting Software for Small Businesses.",
       tech: ["C#", "Blazor (ASP.NET Core)", "PostgreSQL"],
-      demoUrl: "https://example.com/demo/sofipos",
+      members: 6,
+      bullets: [
+        "Developed inventory management features including stock import/export tracking and real-time monitoring",
+        "Implemented cashflow and debt management modules",
+        "Built accounting workflows for small household businesses",
+        "Built internal tools to automate and optimize business operations",
+      ],
       githubUrl: "https://github.com/lethanhtho1103",
+      featured: true,
     },
     {
-      title: "E-task Management — Task & Workforce Management",
-      description:
-        "Problem: it is hard to track progress and responsibilities across multiple teams. Solution: a project-based task management system with role-based access control, real-time notifications and progress dashboards.",
+      title: "E-Task Management System",
+      subtitle:
+        "Workforce management system for tracking employee tasks, project progress, and department performance.",
       tech: ["Node.js (Express)", "React.js", "MongoDB", "Socket.io"],
-      demoUrl: "https://example.com/demo/etask",
+      members: 6,
+      bullets: [
+        "Built real-time project & task management with notifications",
+        "Implemented role-based access control with secure authentication",
+        "Designed RESTful APIs optimizing queries for 40% faster response",
+        "Built analytics dashboards for task tracking",
+      ],
       githubUrl: "https://github.com/lethanhtho1103",
     },
     {
-      title: "E-document — PDF Data Extraction Service",
-      description:
-        "Problem: companies waste hours manually typing data from PDF files. Solution: an automated extraction service that converts PDF content into structured data, with export and API integration options.",
-      tech: ["Node.js (Express)", "React.js", "MongoDB", "Socket.io"],
-      demoUrl: "https://example.com/demo/edocument",
-      githubUrl: "https://github.com/lethanhtho1103",
-    },
-    {
-      title: "E-commerce Computer Store — Online Component Shop",
-      description:
-        "E-commerce website for selling computer components, focusing on product management, cart, orders and online payment flow.",
-      tech: ["Node.js (Express)", "React.js", "MongoDB"],
-      demoUrl: "https://example.com/demo/computer-store",
+      title: "E-Document",
+      subtitle:
+        "Software solution to minimize manual data entry by extracting data from PDF files with OCR support.",
+      tech: ["Node.js", "React.js", "MongoDB", "Google Document AI"],
+      members: 7,
+      bullets: [
+        "Integrated API into Bash shell for the desktop version",
+        "Exposed API to run OCR for other systems",
+        "Integrated Google Document AI API",
+        "Developed the user interface",
+      ],
       githubUrl: "https://github.com/lethanhtho1103",
     },
   ] satisfies Project[],
@@ -150,44 +164,32 @@ export const site = {
       title: "Fullstack Developer",
       org: "Visnam Trading JSC",
       description:
-        "Contributing to SOFIPOS — a sales, cashflow and debt management system for small businesses.",
-      bullets: [
-        "Develop inventory management features: import/export stock, adjust quantities and track stock levels over time.",
-        "Implement cashflow and debt modules to monitor income/expense and receivables/payables.",
-        "Design and optimize internal financial reports to support business decisions.",
-      ],
+        "Contributing to SOFIPOS — a sales, inventory, cashflow, and debt management platform for small businesses. I build features across inventory (stock in/out, adjustments, and traceable movement history), cashflow tracking (income/expense), and receivables/payables to help owners monitor debts clearly. I also collaborate with the team to design reporting flows and optimize performance so that daily operations and month-end summaries remain fast and reliable.",
+      type: "work",
     },
     {
       time: "Oct 2024 — Aug 2025",
       title: "Fullstack Developer",
       org: "Eranin Software Technology Company",
       description:
-        "Developed a task management system (E-task) and a PDF data extraction solution (E-document).",
-      bullets: [
-        "Designed and implemented RESTful APIs for projects, tasks and users.",
-        "Built real-time notification features using Socket.io to reflect task status changes.",
-        "Developed responsive UI/UX to keep the experience consistent across devices.",
-      ],
+        "Developed two internal products: E-Task (workforce/task management) and E-Document (PDF data extraction with OCR). I worked end-to-end from designing data models and RESTful APIs to building responsive UI screens, focusing on clear user flows and maintainable code. For E-Task, I implemented role-based access control and real-time updates/notifications so teams could track progress and responsibilities accurately.",
+      type: "work",
     },
     {
       time: "May 2024 — Jul 2024",
       title: "Back-end Developer",
       org: "VNPT Can Tho",
       description:
-        "Worked on an e-commerce website for selling computer components.",
-      bullets: [
-        "Designed MongoDB schema for products, orders and users.",
-        "Implemented authentication using JWT and integrated OAuth2 login (Facebook, Google).",
-        "Developed RESTful APIs for cart, orders and online payment flow.",
-      ],
+        "Worked on an e-commerce system for selling computer components, focusing on backend architecture and API development. I designed MongoDB collections for products, carts, orders, and users, and implemented authentication using JWT with OAuth2 social login. I also developed RESTful endpoints for cart and checkout flows, ensuring data validation and consistent error handling to support a stable purchase experience.",
+      type: "work",
     },
     {
       time: "Sep 2020 — Dec 2024",
       title: "Information Technology Student",
       org: "Can Tho University (GPA 3.42)",
       description:
-        "Studied programming fundamentals, databases, computer networks and web development. Built multiple fullstack projects using Node.js, React.js, MongoDB and MySQL.",
+        "Studied programming fundamentals, databases, computer networks, and web development, with a strong focus on practical projects. Built multiple fullstack applications (including e-commerce and management systems) using Node.js, React.js, MongoDB, and MySQL. This period helped me strengthen problem-solving, teamwork, and the ability to deliver features from requirements to a working product.",
+      type: "education",
     },
   ] satisfies TimelineItem[],
 } as const;
-

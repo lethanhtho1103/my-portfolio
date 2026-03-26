@@ -11,14 +11,10 @@ import { site } from "@/data/site";
 function HeroImage() {
   return (
     <MotionDiv
-      className="relative flex items-center justify-center"
+      className="relative flex items-center justify-center transform-gpu will-change-transform"
       initial={{ opacity: 0, y: 30 }}
-      animate={{ opacity: 1, y: [0, -12, 0] }}
-      transition={{
-        duration: 4,
-        ease: "easeInOut",
-        repeat: Infinity,
-      }}
+      animate={{ opacity: 1, y: 0 }}
+      transition={{ duration: 0.8, ease: "easeOut" }}
     >
       {/* Glow đơn giản, hiện đại */}
       <div className="pointer-events-none absolute inset-0 -z-10 flex items-center justify-center">
@@ -34,6 +30,7 @@ function HeroImage() {
           sizes="(min-width: 1024px) 320px, (min-width: 640px) 300px, 260px"
           className="object-contain drop-shadow-[0_30px_60px_rgba(0,0,0,0.6)]"
           priority
+          fetchPriority="high"
         />
       </div>
     </MotionDiv>

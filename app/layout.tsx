@@ -28,7 +28,7 @@ export const metadata: Metadata = {
     "Next.js",
     "TypeScript",
     "Tailwind CSS",
-    "Fullstack Developer",
+    "Software Developer",
   ],
   authors: [{ name: site.name }],
   openGraph: {
@@ -56,8 +56,9 @@ export default function RootLayout({
       >
         <ThemeProvider
           attribute="class"
-          defaultTheme="dark"
+          defaultTheme="system"
           enableSystem
+          enableColorScheme
           disableTransitionOnChange
         >
           <div className="min-h-dvh bg-[var(--background)] text-[var(--foreground)]">

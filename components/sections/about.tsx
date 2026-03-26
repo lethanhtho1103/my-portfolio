@@ -2,6 +2,7 @@
 
 import { MotionSection, MotionDiv } from "@/components/motion";
 import { SectionHeading } from "@/components/section-heading";
+import { Card } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { site } from "@/data/site";
 
@@ -20,65 +21,79 @@ export function AboutSection() {
     >
       <SectionHeading
         eyebrow="About"
-        title="Fullstack developer who cares about product and performance"
-        description="I have almost 1 year of experience working on real-world systems for retail, finance and task management. I enjoy designing clear user flows and maintainable codebases that help teams ship faster with confidence."
+        title="About me"
+        description="A quick snapshot of who I am and what I work with."
+        className="max-w-5xl"
       />
 
-      <div className="grid gap-8 lg:grid-cols-2">
-        <div className="rounded-[var(--radius)] border border-[var(--border)] bg-[var(--card)] p-6">
-          <h3 className="text-base font-semibold tracking-tight">Who am I?</h3>
-          <p className="mt-3 text-sm leading-7 text-[var(--muted-foreground)]">
+      <Card className="mx-auto max-w-5xl p-6 sm:p-8">
+        <div className="space-y-4 text-sm leading-7 text-[var(--muted-foreground)] sm:text-base">
+          <p>
             I&apos;m {site.personalInfo.fullName}, a {site.personalInfo.role}{" "}
-            based in {site.location}. I&apos;ve worked on projects in retail, finance
-            and task management, from designing APIs to building usable interfaces.
+            based in {site.location}. I graduated from Can Tho University with a
+            degree in Information Technology (GPA: 3.42). I specialize in
+            building modern web applications with clean code and great user
+            experiences.
           </p>
-          <p className="mt-3 text-sm leading-7 text-[var(--muted-foreground)]">
-            My strengths are understanding business requirements, breaking them into
-            concrete features, and keeping the codebase clean so teammates can onboard quickly.
+          <p>
+            My expertise spans across backend development with <b>C# / .NET</b>{" "}
+            and <b>Node.js</b>, frontend with <b>React & Next.js</b>, and
+            databases like <b>PostgreSQL</b>, <b>MongoDB</b>, and <b>MySQL</b>.
+            I also work with automation tools like <b>n8n</b>.
           </p>
-
-          <div className="mt-5 flex flex-wrap gap-2">
-            {[
-              "UI Systems",
-              "SEO",
-              "Performance",
-              "API Integration",
-              "Clean Architecture",
-              "Testing-ready",
-            ].map((x) => (
-              <Badge key={x} variant="outline">
-                {x}
-              </Badge>
-            ))}
-          </div>
         </div>
 
-        <div className="rounded-[var(--radius)] border border-[var(--border)] bg-[var(--card)] p-6">
-          <h3 className="text-base font-semibold tracking-tight">Skills</h3>
-          <div className="mt-5 space-y-4">
-            {site.skills.map((s) => (
+        <div className="mt-8 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
+          {[
+            { label: "Backend", value: "C# / .NET" },
+            { label: "Frontend", value: "React / Next.js" },
+            { label: "Database", value: "PostgreSQL" },
+            { label: "Automation", value: "n8n" },
+          ].map((x) => (
+            <MotionDiv
+              key={x.label}
+              initial={{ opacity: 0, y: 8 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.35 }}
+              className="rounded-[var(--radius)] border border-[var(--border)] bg-[var(--card)] p-4 text-center"
+            >
+              <p className="text-xs text-[var(--muted-foreground)]">
+                {x.label}
+              </p>
+              <p className="mt-1 text-sm font-semibold text-[var(--foreground)]">
+                {x.value}
+              </p>
+            </MotionDiv>
+          ))}
+        </div>
+
+        <div className="mt-8">
+          <div className="grid gap-6 md:grid-cols-3">
+            {site.skillsByCategory.map((group) => (
               <MotionDiv
-                key={s.name}
-                initial={{ opacity: 0, y: 6 }}
+                key={group.category}
+                initial={{ opacity: 0, y: 8 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.35 }}
+                className="rounded-[var(--radius)] border border-[var(--border)] bg-[var(--card)] p-5"
               >
-                <div className="flex items-center gap-3">
-                  <span className="text-sm font-medium">{s.name}</span>
-                </div>
-                <div className="mt-2 h-2 w-full rounded-full bg-[var(--muted)]">
-                  <div
-                    className="h-2 rounded-full bg-[var(--primary)]"
-                    style={{ width: `${s.level}%` }}
-                  />
+                <h3 className="text-sm font-semibold tracking-tight">
+                  {group.category}
+                </h3>
+                <div className="mt-3 flex flex-wrap gap-2">
+                  {group.items.map((item) => (
+                    <Badge key={item} variant="outline">
+                      {item}
+                    </Badge>
+                  ))}
                 </div>
               </MotionDiv>
             ))}
           </div>
         </div>
-      </div>
+      </Card>
     </MotionSection>
   );
 }
-
