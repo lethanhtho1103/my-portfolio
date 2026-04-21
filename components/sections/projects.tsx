@@ -48,13 +48,7 @@ export function ProjectsSection() {
               <CardHeader className="pb-3">
                 <div className="flex items-start justify-between gap-4">
                   <div className="min-w-0">
-                    <CardTitle
-                      className={
-                        p.featured
-                          ? "text-lg font-bold text-blue-600"
-                          : "text-lg font-bold"
-                      }
-                    >
+                    <CardTitle className="text-lg font-bold text-blue-600">
                       {p.title}
                     </CardTitle>
                     <CardDescription className="mt-1">

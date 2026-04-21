@@ -18,7 +18,7 @@ function HeroImage() {
     >
       {/* Glow đơn giản, hiện đại */}
       <div className="pointer-events-none absolute inset-0 -z-10 flex items-center justify-center">
-        <div className="h-[420px] w-[420px] rounded-full bg-indigo-500/20 blur-[120px]" />
+        <div className="h-[420px] w-[420px] rounded-ful" />
       </div>
 
       {/* Avatar */}

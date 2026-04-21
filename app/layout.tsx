@@ -5,6 +5,7 @@ import { ThemeProvider } from "@/components/theme-provider";
 import { Header } from "@/components/header";
 import { Footer } from "@/components/footer";
 import { site } from "@/data/site";
+import avatarIcon from "./avatar.jpg";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -28,7 +29,7 @@ export const metadata: Metadata = {
     "Next.js",
     "TypeScript",
     "Tailwind CSS",
-    "Software Developer",
+    "Fullstack Developer",
   ],
   authors: [{ name: site.name }],
   openGraph: {
@@ -41,6 +42,11 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: `${site.name} — ${site.title}`,
     description: site.tagline,
+  },
+  icons: {
+    icon: avatarIcon.src,
+    shortcut: avatarIcon.src,
+    apple: avatarIcon.src,
   },
 };
 

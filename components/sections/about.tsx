@@ -39,37 +39,11 @@ export function AboutSection() {
             My expertise spans across backend development with <b>C# / .NET</b>{" "}
             and <b>Node.js</b>, frontend with <b>React & Next.js</b>, and
             databases like <b>PostgreSQL</b>, <b>MongoDB</b>, and <b>MySQL</b>.
-            I also work with automation tools like <b>n8n</b>.
           </p>
         </div>
 
-        <div className="mt-8 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
-          {[
-            { label: "Backend", value: "C# / .NET" },
-            { label: "Frontend", value: "React / Next.js" },
-            { label: "Database", value: "PostgreSQL" },
-            { label: "Automation", value: "n8n" },
-          ].map((x) => (
-            <MotionDiv
-              key={x.label}
-              initial={{ opacity: 0, y: 8 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.35 }}
-              className="rounded-[var(--radius)] border border-[var(--border)] bg-[var(--card)] p-4 text-center"
-            >
-              <p className="text-xs text-[var(--muted-foreground)]">
-                {x.label}
-              </p>
-              <p className="mt-1 text-sm font-semibold text-[var(--foreground)]">
-                {x.value}
-              </p>
-            </MotionDiv>
-          ))}
-        </div>
-
         <div className="mt-8">
-          <div className="grid gap-6 md:grid-cols-3">
+          <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-4">
             {site.skillsByCategory.map((group) => (
               <MotionDiv
                 key={group.category}

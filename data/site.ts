@@ -10,7 +10,6 @@ export type Project = {
   members: number;
   bullets: string[];
   githubUrl?: string;
-  featured?: boolean;
 };
 
 export type TimelineItem = {
@@ -39,7 +38,7 @@ export type PersonalInfo = {
 };
 
 export type SkillCategory = {
-  category: "Frontend" | "Backend" | "Tools";
+  category: "Frontend" | "Backend" | "Database" | "Tools";
   items: string[];
 };
 
@@ -54,9 +53,9 @@ export type Experience = {
 
 export const site = {
   name: "Le Thanh Tho",
-  title: "Software Developer",
+  title: "Fullstack Developer",
   tagline:
-    "Software developer with almost 1 year of experience building web applications for commerce, finance and workforce management.",
+    "Fullstack Developer with almost 2 year of experience building web applications for commerce, finance and workforce management.",
   location: "Tan Chau District, An Giang Province, Viet Nam",
   email: "lethanhtho1953@gmail.com",
   cvUrl: "https://github.com/lethanhtho1103",
@@ -66,7 +65,7 @@ export const site = {
   ] satisfies SocialLink[],
   personalInfo: {
     fullName: "Le Thanh Tho",
-    role: "Software Developer",
+    role: "Fullstack Developer",
     location: "Tan Chau District, An Giang Province, Viet Nam",
     email: "lethanhtho1953@gmail.com",
     phone: "097-222-1953",
@@ -80,7 +79,7 @@ export const site = {
     { name: "React.js / Next.js", level: 85 },
     { name: "C# / ASP.NET Core / Blazor", level: 80 },
     { name: "JavaScript / TypeScript", level: 85 },
-    { name: "SQL (MySQL, PostgreSQL, Oracle)", level: 80 },
+    { name: "SQL (MySQL, PostgreSQL)", level: 80 },
     { name: "MongoDB", level: 78 },
     { name: "Git / GitHub / Jira", level: 80 },
   ] satisfies Skill[],
@@ -100,17 +99,12 @@ export const site = {
       ],
     },
     {
+      category: "Database",
+      items: ["MySQL", "PostgreSQL", "MongoDB"],
+    },
+    {
       category: "Tools",
-      items: [
-        "Git / GitHub",
-        "Jira",
-        "Postman",
-        "XAMPP",
-        "MySQL",
-        "PostgreSQL",
-        "MongoDB",
-        "Oracle",
-      ],
+      items: ["Git / GitHub", "Jira", "Postman", "XAMPP"],
     },
   ] satisfies SkillCategory[],
   projects: [
@@ -127,7 +121,6 @@ export const site = {
         "Built internal tools to automate and optimize business operations",
       ],
       githubUrl: "https://github.com/lethanhtho1103",
-      featured: true,
     },
     {
       title: "E-Task Management System",
