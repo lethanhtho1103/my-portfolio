@@ -2,7 +2,7 @@
 
 import Link from "next/link";
 import Image from "next/image";
-import { ArrowRight, Github, Linkedin, Mail } from "lucide-react";
+import { ArrowRight, Download, Github, Linkedin, Mail } from "lucide-react";
 import { MotionSection, MotionDiv } from "@/components/motion";
 import { Button } from "@/components/ui/button";
 import { site } from "@/data/site";
@@ -72,7 +72,7 @@ export function HeroSection() {
           </p>
 
           {/* CTA */}
-          <div className="mt-8 flex flex-col gap-3 sm:flex-row">
+          <div className="mt-8 flex flex-col gap-3 sm:flex-row sm:flex-wrap">
             <Link href="#contact">
               <Button size="lg">
                 <Mail className="mr-2 h-4 w-4" />
@@ -86,6 +86,13 @@ export function HeroSection() {
                 <ArrowRight className="ml-2 h-4 w-4" />
               </Button>
             </Link>
+
+            <a href={site.cvUrl} download={site.cvFileName}>
+              <Button size="lg" variant="secondary">
+                <Download className="mr-2 h-4 w-4" />
+                Download CV
+              </Button>
+            </a>
           </div>
 
           {/* SOCIAL */}

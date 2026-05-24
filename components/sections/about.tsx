@@ -29,16 +29,17 @@ export function AboutSection() {
       <Card className="mx-auto max-w-5xl p-6 sm:p-8">
         <div className="space-y-4 text-sm leading-7 text-[var(--muted-foreground)] sm:text-base">
           <p>
-            I&apos;m {site.personalInfo.fullName}, a {site.personalInfo.role}{" "}
-            based in {site.location}. I graduated from Can Tho University with a
-            degree in Information Technology (GPA: 3.42). I specialize in
-            building modern web applications with clean code and great user
+            I&apos;m Le Thanh Tho, a Software Engineer based in Tan Chau
+            District, An Giang Province, Vietnam. I graduated from Can Tho
+            University with an Engineering degree in Information Technology
+            (GPA: 3.42). I have nearly 2 years of experience building modern
+            business applications, including e-commerce, HRM, and POS systems,
+            with a focus on clean code, scalability, and delivering great user
             experiences.
           </p>
           <p>
             My expertise spans across backend development with <b>C# / .NET</b>{" "}
-            and <b>Node.js</b>, frontend with <b>React & Next.js</b>, and
-            databases like <b>PostgreSQL</b>, <b>MongoDB</b>, and <b>MySQL</b>.
+            and <b>Node.js</b>, frontend development with <b>Blazor</b>, <b>React</b>, and <b>Next.js</b>, and database technologies including <b>PostgreSQL</b>, <b>MongoDB</b>, and <b>MySQL</b>.
           </p>
         </div>
 

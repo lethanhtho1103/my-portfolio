@@ -29,7 +29,7 @@ export const metadata: Metadata = {
     "Next.js",
     "TypeScript",
     "Tailwind CSS",
-    "Fullstack Developer",
+    "Software Engineer",
   ],
   authors: [{ name: site.name }],
   openGraph: {

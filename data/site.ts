@@ -3,6 +3,11 @@ export type SocialLink = {
   href: string;
 };
 
+export type ProjectLink = {
+  label: string;
+  href: string;
+};
+
 export type Project = {
   title: string;
   subtitle: string;
@@ -10,6 +15,7 @@ export type Project = {
   members: number;
   bullets: string[];
   githubUrl?: string;
+  links?: ProjectLink[];
 };
 
 export type TimelineItem = {
@@ -53,12 +59,13 @@ export type Experience = {
 
 export const site = {
   name: "Le Thanh Tho",
-  title: "Fullstack Developer",
+  title: "Software Engineer",
   tagline:
-    "Fullstack Developer with almost 2 year of experience building web applications for commerce, finance and workforce management.",
+    "Software Engineer with nearly 2 years of experience building business applications, including e-commerce, HRM, and POS systems.",
   location: "Tan Chau District, An Giang Province, Viet Nam",
   email: "lethanhtho1953@gmail.com",
-  cvUrl: "https://github.com/lethanhtho1103",
+  cvUrl: "/CV_LeThanhTho.pdf",
+  cvFileName: "CV_LeThanhTho.pdf",
   socials: [
     { label: "GitHub", href: "https://github.com/lethanhtho1103" },
     { label: "LinkedIn", href: "https://www.linkedin.com/in/lethanhtho1103" },
@@ -121,6 +128,10 @@ export const site = {
         "Built internal tools to automate and optimize business operations",
       ],
       githubUrl: "https://github.com/lethanhtho1103",
+      links: [
+        { label: "Website", href: "https://sofipos.vn/" },
+        { label: "Live app", href: "https://sp.sofipos.vn/login" },
+      ],
     },
     {
       title: "E-Task Management System",

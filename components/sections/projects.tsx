@@ -1,7 +1,7 @@
 "use client";
 
 import Link from "next/link";
-import { Github, Users } from "lucide-react";
+import { ExternalLink, Github, Users } from "lucide-react";
 import { MotionSection, MotionDiv } from "@/components/motion";
 import { SectionHeading } from "@/components/section-heading";
 import {
@@ -96,7 +96,20 @@ export function ProjectsSection() {
                 </ul>
               </CardContent>
 
-              <CardFooter className="pt-0" />
+              <CardFooter className="flex flex-wrap gap-2 pt-0">
+                {p.links?.map((link) => (
+                  <Link
+                    key={link.href}
+                    href={link.href}
+                    target="_blank"
+                    rel="noreferrer"
+                    className="inline-flex items-center gap-1.5 rounded-full border border-[var(--border)] px-3 py-1.5 text-xs text-[var(--muted-foreground)] transition-colors hover:bg-[var(--muted)] hover:text-[var(--foreground)]"
+                  >
+                    <ExternalLink className="h-3.5 w-3.5" />
+                    {link.label}
+                  </Link>
+                ))}
+              </CardFooter>
             </Card>
           </MotionDiv>
         ))}
