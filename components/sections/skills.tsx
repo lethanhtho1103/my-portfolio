@@ -21,7 +21,7 @@ export function SkillsSection() {
       <SectionHeading
         eyebrow="Skills"
         title="Tech stack I work with"
-        description="Grouped into Frontend, Backend and Tools so recruiters can scan quickly."
+        description="Programming languages, frontend, backend, databases, and development tools."
       />
 
       <div className="grid gap-6 md:grid-cols-3">
@@ -50,4 +50,3 @@ export function SkillsSection() {
     </MotionSection>
   );
 }
-

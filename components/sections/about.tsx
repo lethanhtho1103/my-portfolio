@@ -28,23 +28,16 @@ export function AboutSection() {
 
       <Card className="mx-auto max-w-5xl p-6 sm:p-8">
         <div className="space-y-4 text-sm leading-7 text-[var(--muted-foreground)] sm:text-base">
+          <p>{site.personalInfo.summary}</p>
           <p>
-            I&apos;m Le Thanh Tho, a Software Engineer based in Tan Chau
-            District, An Giang Province, Vietnam. I graduated from Can Tho
-            University with an Engineering degree in Information Technology
-            (GPA: 3.42). I have nearly 2 years of experience building modern
-            business applications, including e-commerce, HRM, and POS systems,
-            with a focus on clean code, scalability, and delivering great user
-            experiences.
-          </p>
-          <p>
-            My expertise spans across backend development with <b>C# / .NET</b>{" "}
-            and <b>Node.js</b>, frontend development with <b>Blazor</b>, <b>React</b>, and <b>Next.js</b>, and database technologies including <b>PostgreSQL</b>, <b>MongoDB</b>, and <b>MySQL</b>.
+            I&apos;m based in {site.personalInfo.location}. I graduated in
+            Information Technology from Can Tho University (Sep 2020 – Dec 2024)
+            with a GPA of 3.42.
           </p>
         </div>
 
         <div className="mt-8">
-          <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-4">
+          <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
             {site.skillsByCategory.map((group) => (
               <MotionDiv
                 key={group.category}

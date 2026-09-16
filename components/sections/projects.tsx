@@ -113,6 +113,23 @@ export function ProjectsSection() {
             </Card>
           </MotionDiv>
         ))}
+        <Card>
+          <CardHeader>
+            <CardTitle className="text-lg font-bold text-blue-600">
+              Additional Projects
+            </CardTitle>
+            <CardDescription className="mt-1 leading-7">
+              {site.additionalProjects.description}
+            </CardDescription>
+          </CardHeader>
+          <CardContent className="flex flex-wrap gap-2 pt-0">
+            {site.additionalProjects.tech.map((tech) => (
+              <Badge key={tech} variant="outline">
+                {tech}
+              </Badge>
+            ))}
+          </CardContent>
+        </Card>
       </div>
     </MotionSection>
   );

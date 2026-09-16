@@ -1,7 +1,7 @@
 "use client";
 
 import Link from "next/link";
-import { Github, Linkedin, Mail } from "lucide-react";
+import { Github, Linkedin, Mail, Phone } from "lucide-react";
 import { MotionSection } from "@/components/motion";
 import { SectionHeading } from "@/components/section-heading";
 import { site } from "@/data/site";
@@ -36,6 +36,14 @@ export function ContactSection() {
           </Link>
 
           <Link
+            href={`tel:${site.personalInfo.phone.replace(/-/g, "")}`}
+            className="flex items-center gap-2 rounded-[var(--radius)] border border-[var(--border)] bg-[var(--background)] px-4 py-3 text-sm transition-colors hover:bg-[var(--muted)]"
+          >
+            <Phone className="h-4 w-4" />
+            {site.personalInfo.phone}
+          </Link>
+
+          <Link
             href={site.socials.find((s) => s.label === "GitHub")?.href || "#"}
             target="_blank"
             rel="noreferrer"
@@ -49,7 +57,7 @@ export function ContactSection() {
             href={site.socials.find((s) => s.label === "LinkedIn")?.href || "#"}
             target="_blank"
             rel="noreferrer"
-            className="flex items-center gap-2 rounded-[var(--radius)] border border-[var(--border)] bg-[var(--background)] px-4 py-3 text-sm transition-colors hover:bg-[var(--muted)] sm:col-span-2"
+            className="flex items-center gap-2 rounded-[var(--radius)] border border-[var(--border)] bg-[var(--background)] px-4 py-3 text-sm transition-colors hover:bg-[var(--muted)]"
           >
             <Linkedin className="h-4 w-4" />
             LinkedIn
@@ -59,4 +67,3 @@ export function ContactSection() {
     </MotionSection>
   );
 }
-
