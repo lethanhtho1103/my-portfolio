@@ -62,7 +62,7 @@ export const site = {
   title: "Software Engineer",
   url: "https://thanhtho.vercel.app",
   tagline:
-    "Software Engineer with nearly 2 years of experience building business applications, including e-commerce, HRM, and POS systems.",
+    "Software Engineer with over 2 years of experience building business applications, including e-commerce, HRM, and POS systems.",
   location: "Tan Chau District, An Giang Province, Viet Nam",
   email: "lethanhtho1953@gmail.com",
   cvUrl: "/CV_LeThanhTho.pdf",
@@ -80,7 +80,7 @@ export const site = {
     github: "https://github.com/lethanhtho1103",
     birthday: "2002-03-11",
     summary:
-      "Software Engineer with nearly 2 years of experience building business applications, including e-commerce, HRM, and POS systems. I am passionate about developing scalable, efficient, and user-focused web applications, with strong problem-solving, teamwork, and continuous learning skills. My goal is to grow into a senior full-stack developer and technical leader.",
+      "Software Engineer with over 2 years of experience building business applications, including e-commerce, HRM, and POS systems. I am passionate about developing scalable, efficient, and user-focused web applications, with strong problem-solving, teamwork, and continuous learning skills. My goal is to grow into a senior full-stack developer and technical leader.",
   } satisfies PersonalInfo,
   skills: [
     { name: "Node.js (Express)", level: 85 },
