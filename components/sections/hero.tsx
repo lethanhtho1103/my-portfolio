@@ -87,11 +87,13 @@ export function HeroSection() {
               </Button>
             </Link>
 
-            <a href={site.cvUrl} download={site.cvFileName}>
-              <Button size="lg" variant="secondary">
-                <Download className="mr-2 h-4 w-4" />
-                Download CV
-              </Button>
+            <a
+              href={site.cvUrl}
+              download={site.cvFileName}
+              className="inline-flex h-11 cursor-pointer items-center justify-center gap-2 rounded-[var(--radius)] bg-[var(--muted)] px-5 text-base font-medium text-[var(--foreground)] transition-colors hover:bg-[color-mix(in_oklab,var(--muted)_85%,transparent)] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[var(--ring)]"
+            >
+              <Download className="mr-2 h-4 w-4" />
+              Download CV
             </a>
           </div>
 

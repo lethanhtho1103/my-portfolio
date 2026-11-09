@@ -32,7 +32,7 @@ export function AboutSection() {
           <p>
             I&apos;m based in {site.personalInfo.location}. I graduated in
             Information Technology from Can Tho University (Sep 2020 – Dec 2024)
-            with a GPA of 3.42.
+            with a GPA of 3.42/4.0.
           </p>
         </div>
 

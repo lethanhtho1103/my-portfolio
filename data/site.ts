@@ -62,11 +62,11 @@ export const site = {
   title: "Software Engineer",
   url: "https://thanhtho.vercel.app",
   tagline:
-    "Software Engineer with over 2 years of experience building business applications, including e-commerce, HRM, and POS systems.",
+    "Full-stack Software Engineer with 2 years of experience developing business applications using C#, ASP.NET Core, Blazor, React, and Node.js.",
   location: "Tan Chau District, An Giang Province, Viet Nam",
   email: "lethanhtho1953@gmail.com",
-  cvUrl: "/CV_LeThanhTho.pdf",
-  cvFileName: "CV_LeThanhTho.pdf",
+  cvUrl: "/LeThanhTho_SoftwareEngineer_CV.pdf",
+  cvFileName: "LeThanhTho_SoftwareEngineer_CV.pdf",
   socials: [
     { label: "GitHub", href: "https://github.com/lethanhtho1103" },
     { label: "LinkedIn", href: "https://www.linkedin.com/in/lethanhtho1103" },
@@ -80,7 +80,7 @@ export const site = {
     github: "https://github.com/lethanhtho1103",
     birthday: "2002-03-11",
     summary:
-      "Software Engineer with over 2 years of experience building business applications, including e-commerce, HRM, and POS systems. I am passionate about developing scalable, efficient, and user-focused web applications, with strong problem-solving, teamwork, and continuous learning skills. My goal is to grow into a senior full-stack developer and technical leader.",
+      "Full-stack Software Engineer with 2 years of experience developing business applications using C#, ASP.NET Core, Blazor, React, and Node.js. Experienced in building RESTful APIs, implementing role-based access control, and developing workflows for HRM, POS, inventory, and accounting systems.",
   } satisfies PersonalInfo,
   skills: [
     { name: "Node.js (Express)", level: 85 },
@@ -94,53 +94,51 @@ export const site = {
   skillsByCategory: [
     {
       category: "Languages",
-      items: ["JavaScript", "TypeScript", "Java", "C", "C#"],
+      items: ["C#", "JavaScript", "TypeScript"],
     },
     {
       category: "Frontend",
-      items: [
-        "React.js",
-        "Next.js",
-        "AngularJS",
-        "Blazor",
-        "Redux",
-        "Material UI",
-        "Bootstrap 4",
-      ],
+      items: ["Blazor", "React.js", "Next.js"],
     },
     {
       category: "Backend",
       items: [
-        "Node.js (Express)",
         "ASP.NET Core",
-        "Laravel",
-        "RESTful API",
-        "JWT / OAuth2",
-        "WebSocket / Socket.io",
-        "Sequelize",
+        "Entity Framework Core",
+        "Node.js",
+        "Express.js",
+        "Socket.IO",
+        "RESTful APIs",
       ],
     },
     {
       category: "Database",
-      items: ["MySQL", "PostgreSQL", "MongoDB"],
+      items: ["PostgreSQL", "MySQL", "MongoDB"],
     },
     {
       category: "Tools",
-      items: ["Git / GitHub", "Jira", "Postman", "XAMPP"],
+      items: ["Git", "GitHub", "Postman", "Jira"],
     },
   ] satisfies SkillCategory[],
   projects: [
     {
       title: "SOFIPOS",
       subtitle:
-        "Sales, Inventory, Cashflow & Debt Management and Reporting Software for Small Businesses.",
-      tech: ["C#", "Blazor (ASP.NET Core)", "PostgreSQL"],
+        "Sales, inventory, cash flow, debt management, and reporting platform for household businesses.",
+      tech: [
+        "C#",
+        "ASP.NET Core",
+        "Blazor",
+        "PostgreSQL",
+        "Entity Framework Core",
+        "Socket.IO",
+      ],
       members: 6,
       bullets: [
-        "Developed inventory management features including stock import/export tracking, quantity adjustments, and real-time stock monitoring",
-        "Implemented cashflow and debt management modules covering income/expense recording, receivables/payables tracking, and payment settlement workflows",
-        "Built accounting workflows for household businesses, including accounting books, declarations, and regulatory reports in compliance with government circulars",
-        "Built internal tools to help customers automate and optimize business and financial operations",
+        "Developed inventory workflows for stock receipts, issues, adjustments, and real-time stock monitoring.",
+        "Implemented cash flow and receivables/payables workflows, including transaction recording, debt tracking, and payment settlements.",
+        "Developed accounting books, tax-related workflows, and regulatory reports for Vietnamese household businesses.",
+        "Built supporting tools to help customers streamline business and financial operations.",
       ],
       githubUrl: "https://github.com/lethanhtho1103",
       links: [
@@ -151,15 +149,21 @@ export const site = {
     {
       title: "VIN-HRM",
       subtitle:
-        "Human resource management system covering employee operations, attendance, leave, performance, and internal approval workflows.",
-      tech: ["C#", "Blazor (ASP.NET Core)", "PostgreSQL"],
+        "Human resource management system for employee operations, attendance, leave, performance, and approvals.",
+      tech: [
+        "C#",
+        "ASP.NET Core",
+        "Blazor",
+        "PostgreSQL",
+        "Entity Framework Core",
+        "Socket.IO",
+      ],
       members: 6,
       bullets: [
-        "Developed task management, work scheduling, attendance tracking, and employee timekeeping features",
-        "Implemented leave management and multi-step approval workflows for leave requests, overtime, and other internal processes",
-        "Built OKR management and employee performance evaluation modules",
-        "Developed an internal news feed with posts, comments, and reactions",
-        "Implemented role-based access control and integrated Vin-BHXH for social insurance-related processes",
+        "Developed task management, work scheduling, attendance tracking, and employee timekeeping features.",
+        "Implemented multi-step approval workflows for leave requests, overtime, and internal processes.",
+        "Built OKR management, employee performance evaluation modules, and an internal news feed with comments and reactions.",
+        "Implemented role-based access control and integrated VIN-BHXH for social insurance-related processes.",
       ],
       links: [
         { label: "Website", href: "https://vin-hrm.com/" },
@@ -167,49 +171,41 @@ export const site = {
       ],
     },
     {
-      title: "E-Task Management System",
+      title: "E-task Management System",
       subtitle:
         "Workforce management system for tracking employee tasks, project progress, and department performance.",
-      tech: ["Node.js (Express)", "React.js", "MongoDB", "Socket.io"],
+      tech: ["Node.js (Express.js)", "React.js", "MongoDB", "Socket.IO"],
       members: 6,
       bullets: [
-        "Built real-time project & task management with notifications",
-        "Implemented role-based access control with secure authentication",
-        "Designed and built responsive UI/UX with Bootstrap 4",
-        "Designed RESTful APIs optimizing queries for 40% faster response",
-        "Built analytics dashboards for task tracking and team assignments",
+        "Developed real-time project and task management features with notifications.",
+        "Implemented secure authentication and role-based access control for different user levels.",
+        "Built responsive interfaces and analytics dashboards for task tracking and team assignments.",
+        "Optimized RESTful APIs and database queries to improve application performance.",
       ],
       githubUrl: "https://github.com/lethanhtho1103",
     },
     {
-      title: "E-Document",
+      title: "E-document",
       subtitle:
-        "Software solution to minimize manual data entry by extracting data from PDF files with OCR support and file export.",
-      tech: [
-        "Node.js (Express)",
-        "React.js",
-        "MongoDB",
-        "Socket.io",
-        "Google Document AI",
-      ],
+        "Document processing solution that reduces manual data entry by extracting information from PDF files and supporting file export.",
+      tech: ["Node.js (Express.js)", "React.js", "MongoDB", "Socket.IO"],
       members: 7,
       bullets: [
-        "Integrated API into Bash shell for the desktop version",
-        "Exposed API to run OCR for other systems",
-        "Integrated Google Document AI API",
-        "Developed the user interface",
+        "Integrated APIs with Bash shell scripts for the desktop application.",
+        "Exposed OCR APIs for integration with other systems.",
+        "Integrated Google Document AI and developed the user interface.",
       ],
       githubUrl: "https://github.com/lethanhtho1103",
     },
   ] satisfies Project[],
   additionalProjects: {
     description:
-      "Worked on full-stack web applications including a cosmetic e-commerce platform, a football club management system, and an online movie ticket booking website. Across these projects and my internship, responsibilities included database design, RESTful API development, JWT/OAuth2 authentication, payment integration, responsive UI development, debugging, deployment, and performance optimization.",
+      "Cosmetic e-commerce platform, football club management system, and online movie ticket booking website.",
     tech: [
       "React.js",
       "Redux",
       "Material UI",
-      "Node.js (Express)",
+      "Node.js (Express.js)",
       "Laravel",
       "MySQL",
       "MongoDB",
@@ -222,18 +218,18 @@ export const site = {
   timeline: [
     {
       time: "Oct 2025 — Present",
-      title: "Software Engineer",
-      org: "Visnam Trading JSC",
+      title: "Full-stack Developer",
+      org: "Visnam Trading Joint Stock Company",
       description:
-        "Contributing to SOFIPOS and VIN-HRM using C#, Blazor (ASP.NET Core), and PostgreSQL. For SOFIPOS, I develop inventory, cashflow, debt settlement, accounting, and regulatory reporting workflows for household businesses. For VIN-HRM, I build workforce scheduling, attendance, leave and approval workflows, OKR and performance evaluation modules, and an internal news feed, with role-based access control and Vin-BHXH integration.",
+        "Contributing to SOFIPOS and VIN-HRM using C#, ASP.NET Core, Blazor, PostgreSQL, Entity Framework Core, and Socket.IO. For SOFIPOS, I develop inventory, cash flow, receivables/payables, payment settlement, accounting, tax-related, and regulatory reporting workflows for Vietnamese household businesses, along with supporting business tools. For VIN-HRM, I develop task management, work scheduling, attendance, timekeeping, multi-step approvals, OKR and performance evaluation modules, and an internal news feed with comments and reactions, with role-based access control and VIN-BHXH integration.",
       type: "work",
     },
     {
       time: "Oct 2024 — Aug 2025",
-      title: "Fullstack Developer",
+      title: "Full-stack Developer",
       org: "Eranin Software Technology Company",
       description:
-        "Developed E-Task, a workforce and task management system, and E-Document, a PDF data extraction and export solution, using Node.js (Express), React.js, MongoDB, and Socket.io. For E-Task, I built real-time notifications, role-based access control, responsive interfaces, and analytics dashboards, and optimized database queries for 40% faster API responses. For E-Document, I integrated desktop APIs, exposed OCR APIs for other systems, integrated Google Document AI, and developed the user interface.",
+        "Developed E-task Management System and E-document using Node.js (Express.js), React.js, MongoDB, and Socket.IO. For E-task, I developed real-time project and task management with notifications, secure authentication, role-based access control, responsive interfaces, and analytics dashboards, and optimized RESTful APIs and database queries to improve application performance. For E-document, I integrated APIs with Bash shell scripts for the desktop application, exposed OCR APIs for other systems, integrated Google Document AI, and developed the user interface.",
       type: "work",
     },
     {
@@ -241,15 +237,15 @@ export const site = {
       title: "Back-end Developer Intern",
       org: "VNPT Can Tho",
       description:
-        "Completed a back-end development internship, contributing to an e-commerce website for computer components with database design, RESTful API development, and JWT/OAuth2 authentication.",
+        "Contributed to the development of an e-commerce website for computer components. Designed database schemas and developed RESTful APIs, worked on JWT/OAuth2 authentication and payment integration, and supported debugging and deployment.",
       type: "work",
     },
     {
       time: "Sep 2020 — Dec 2024",
       title: "Information Technology",
-      org: "Can Tho University (GPA 3.42)",
+      org: "Can Tho University (GPA 3.42/4.0)",
       description:
-        "Graduated in Information Technology from Can Tho University with a GPA of 3.42.",
+        "Graduated in Information Technology from Can Tho University with a GPA of 3.42/4.0.",
       type: "education",
     },
   ] satisfies TimelineItem[],

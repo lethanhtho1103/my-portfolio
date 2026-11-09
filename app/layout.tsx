@@ -5,7 +5,7 @@ import { ThemeProvider } from "@/components/theme-provider";
 import { Header } from "@/components/header";
 import { Footer } from "@/components/footer";
 import { site } from "@/data/site";
-import avatarIcon from "./avatar.jpg";
+import avatarIcon from "./avatar2.jpg";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
